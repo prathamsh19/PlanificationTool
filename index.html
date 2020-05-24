@@ -1,0 +1,140 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script> 
+<script src="jquery.js"></script> 
+<style>
+        .button {
+            background-color: rgb(98, 241, 98); /* Green */
+            border: none;
+            color: white;
+            padding: 10px 22px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        p{
+            padding-left:2%;
+        }
+        .button2 {background-color: rgb(53, 179, 221);}
+        .button3 {background-color:rgb(247, 84, 84);}
+        fresh th {
+            background: linear-gradient(rgb(179, 168, 168), rgb(230, 165, 165));
+            text-align: left;
+            border: 1px solid black;
+            height: 400 px;
+        }
+        fresh td {
+            border: 1px solid black;
+            border-bottom: 0;
+            /*border-right: 0;*/
+            height: 20px;
+            text-align: left;
+        }
+        tr:hover{background-color: lightblue;}
+        .z:hover{
+            color:rgb(0, 0, 255);
+        }
+        .y:hover{
+            color:rgb(255, 0, 13);
+        }
+        .x:hover{
+            color:rgb(255, 0, 162);
+        }
+        .w:hover{
+            color:rgb(255, 106, 0);
+        }
+        div th, div td {
+            border: 1px solid black;
+            text-align: center;
+        }
+        table {
+            display: inline;
+            border-collapse: collapse;
+        }
+        input {
+            text-align: center;
+        }
+        #curtain {
+          background-color: white;
+        }
+        body
+        {
+        background-image: url("walk.gif");
+        background-position: right; 
+        background-repeat: no-repeat; 
+        background-size: cover;
+        padding:-50px,-50px;
+       }
+       h1
+       {
+        text-align: left;
+        padding-left: 10%;
+       }
+       h3,form,table
+       {
+           padding-left: 2%;
+       }
+</style>
+</head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="style.css">
+<span class="colorchange"><h1><u>Planification Tool</u></h1></span>
+<body>
+
+  <div>
+    <span class="colorchange"><h3><u>Algorithm:</u></h3></span>
+    <form id="algorithm">
+      <div class="z"><input type="radio" name="algorithm" value="fcfs" /> FCFS<br/></div>
+      <div class="y"><input type="radio" name="algorithm" value="sjf" class="y"/> SJF<br/></div>
+      <div class="x"><input type="radio" name="algorithm" value="robin" /> Round Robin <br/></div>
+      <div class="w"><input type="radio" name="algorithm" value="priority"  checked/> Priority scheduling<br/></div>
+    </form>
+    <br>
+  </div>
+  <div style="padding-left:2%;">
+ <table id="inputTable" >
+        <tr>
+            <th>Process</th>
+            <th>Arrival Time</th>
+            <th>Execute Time</th>
+            <th class="servtime">Service Time</th>
+            <th class="priority-only">Priority</th>
+        </tr>
+        <tr>
+            <td>P0</td>
+            <td>0</td>
+            <td><input class="initial exectime" type="text" value="5" /></td>
+            <td class="servtime"></td>
+            <td class="priority-only initial"><input type="text"/></td>
+        </tr>
+        <tr>
+            <td>P1</td>
+            <td>1</td>
+            <td><input class="initial exectime" value="3" /></td>
+            <td class="servtime"></td>
+            <td class="priority-only" ><input type="text"/></td>
+        </tr>
+    </table>
+    <br><br><br>
+     <input id="minus" style="display: inline; left: 428px; position: bottom; top: 170px;" type="button" value="-" onclick="deleteRow();" class="button button3"/>
+    </div>
+    <p>
+    <input type="button" value="+" onclick="addRow();" class="button" />
+    </p>
+    <p id="quantumParagraph" hidden >Quantum: 
+        <input style="width: 50px;" id="quantum" type="text" value="3" />
+    </p>
+    <p>
+    <input type="button" value="Go" onclick="draw();" class="button button2" />
+    </p>
+    <p><fresh>
+    </fresh></p>
+    <p >
+    Timer: <strong id="timer"></strong> sec
+    </p>
+    </div>
+</body>
+</html>
