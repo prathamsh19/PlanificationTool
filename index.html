@@ -5,7 +5,7 @@
 <style>
         .button {
             background-color: rgb(98, 241, 98); /* Green */
-            border: none;
+            
             color: white;
             padding: 10px 22px;
             text-align: center;
@@ -14,6 +14,7 @@
             font-size: 16px;
             margin: 4px 2px;
             cursor: pointer;
+            border-radius: 12px;
         }
         p{
             padding-left:2%;
@@ -47,12 +48,12 @@
             color:rgb(255, 106, 0);
         }
         div th, div td {
-            border: 1px solid black;
+            border: 4px solid black;
             text-align: center;
         }
         table {
             display: inline;
-            border-collapse: collapse;
+            
         }
         input {
             text-align: center;
@@ -77,29 +78,34 @@
        {
            padding-left: 2%;
        }
+       
+}
 </style>
 </head>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="http://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="style.css">
-<span class="colorchange"><h1><u>Planification Tool</u></h1></span>
+<span class="colorchange"><h1><u><i>Schedular Face</i></u></h1></span>
 <body>
 
   <div>
-    <span class="colorchange"><h3><u>Algorithm:</u></h3></span>
-    <form id="algorithm">
+     <div style="padding-left:2%;">
+   <span class="colorchange"><h2><u>Algorithm:</u></h2></span>
+    </div>
+    <form id="algorithm"><i><b><h3>
       <div class="z"><input type="radio" name="algorithm" value="fcfs" /> FCFS<br/></div>
       <div class="y"><input type="radio" name="algorithm" value="sjf" class="y"/> SJF<br/></div>
       <div class="x"><input type="radio" name="algorithm" value="robin" /> Round Robin <br/></div>
       <div class="w"><input type="radio" name="algorithm" value="priority"  checked/> Priority scheduling<br/></div>
-    </form>
+   </i></b></h3> </form>
     <br>
   </div>
-  <div style="padding-left:2%;">
- <table id="inputTable" >
+
+  <div style="padding-left:2%;"  >
+ <table id="inputTable"  style="color:red">
         <tr>
-            <th>Process</th>
-            <th>Arrival Time</th>
-            <th>Execute Time</th>
+            <th >Process</th>
+            <th >Arrival Time</th>
+            <th >Execute Time</th>
             <th class="servtime">Service Time</th>
             <th class="priority-only">Priority</th>
         </tr>
@@ -119,21 +125,21 @@
         </tr>
     </table>
     <br><br><br>
-     <input id="minus" style="display: inline; left: 428px; position: bottom; top: 170px;" type="button" value="-" onclick="deleteRow();" class="button button3"/>
-    </div>
-    <p>
+     &nbsp;&nbsp;&nbsp;
+    <input id="minus" style="display: inline; left: 428px; position: bottom; top: 170px;" type="button" value="-" onclick="deleteRow();" class="button button3"/>
+     
+    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
     <input type="button" value="+" onclick="addRow();" class="button" />
+    <p id="quantumParagraph" hidden >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Quantum:</b> 
+        <input style="width: 50px;border: 4px solid black;border-radius: 5px;" id="quantum" type="text" value="3" />
     </p>
-    <p id="quantumParagraph" hidden >Quantum: 
-        <input style="width: 50px;" id="quantum" type="text" value="3" />
-    </p>
-    <p>
-    <input type="button" value="Go" onclick="draw();" class="button button2" />
-    </p>
+    <p> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="button" value="Go" onclick="draw();" class="button button2" /></p>
+    </div>
     <p><fresh>
     </fresh></p>
-    <p >
-    Timer: <strong id="timer"></strong> sec
+    <p style="color:green">
+    <h3><b>&nbsp;&nbsp;&nbsp;&nbsp;<i>Timer: <strong id="timer"></strong> sec<b></i></h3>
     </p>
     </div>
 </body>
